@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="390,507" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="937,932" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uas="clr-namespace:UiPath.Activities.System;assembly=UiPath.System.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="86">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -33,10 +33,22 @@
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
-    </sco:Collection>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Activities.System</x:String>
+      <x:String>System.Security</x:String>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="55">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -76,14 +88,239 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="506,300" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="558,867" sap2010:WorkflowViewState.IdRef="Sequence_24">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ReadRangeX Range="{x:Null}" SaveTo="{x:Null}" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" />
+    <Sequence sap:VirtualizedContainerService.HintSize="496,113" sap2010:WorkflowViewState.IdRef="Sequence_16">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dtFile" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Sequence>
+    <Sequence DisplayName="Read Test" sap:VirtualizedContainerService.HintSize="496,90" sap2010:WorkflowViewState.IdRef="Sequence_23">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Zone Scope" sap:VirtualizedContainerService.HintSize="530,695" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_5">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,599" sap2010:WorkflowViewState.IdRef="Sequence_18">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="sd:DataTable" Name="dtZone" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ReadRange AddHeaders="True" DataTable="[dtZone]" DisplayName="Read Range Zone" sap:VirtualizedContainerService.HintSize="434,97" sap2010:WorkflowViewState.IdRef="ReadRange_6" SheetName="Zone" WorkbookPath="Connected Office Test Data.xlsx">
+                <ui:ReadRange.Range>
+                  <InArgument x:TypeArguments="x:String">
+                    <Literal x:TypeArguments="x:String" Value="" />
+                  </InArgument>
+                </ui:ReadRange.Range>
+              </ui:ReadRange>
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtZone]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,340" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,216" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="338,94" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[CurrentRow.Item(0).ToString + &quot; &quot; + CurrentRow.Item(1).ToString + &quot; &quot;+ CurrentRow.Item(2).ToString]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ueab:ExcelProcessScopeX>
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Category Scope" sap:VirtualizedContainerService.HintSize="530,695" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_6">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,599" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="sd:DataTable" Name="dtCategory" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ReadRange AddHeaders="True" DataTable="[dtCategory]" DisplayName="Read Range Zone" sap:VirtualizedContainerService.HintSize="434,97" sap2010:WorkflowViewState.IdRef="ReadRange_7" SheetName="Category" WorkbookPath="Connected Office Test Data.xlsx">
+                <ui:ReadRange.Range>
+                  <InArgument x:TypeArguments="x:String">
+                    <Literal x:TypeArguments="x:String" Value="" />
+                  </InArgument>
+                </ui:ReadRange.Range>
+              </ui:ReadRange>
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCategory]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,340" sap2010:WorkflowViewState.IdRef="ForEachRow_7">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,216" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="338,94" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[CurrentRow.Item(0).ToString + &quot; &quot; + CurrentRow.Item(1).ToString + &quot; &quot;+ CurrentRow.Item(2).ToString]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+      </ueab:ExcelProcessScopeX>
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Device Scope" sap:VirtualizedContainerService.HintSize="530,695" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_7">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,599" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="sd:DataTable" Name="dtDevice" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ReadRange AddHeaders="True" DataTable="[dtDevice]" DisplayName="Read Range Zone" sap:VirtualizedContainerService.HintSize="434,97" sap2010:WorkflowViewState.IdRef="ReadRange_8" SheetName="Device" WorkbookPath="Connected Office Test Data.xlsx">
+                <ui:ReadRange.Range>
+                  <InArgument x:TypeArguments="x:String">
+                    <Literal x:TypeArguments="x:String" Value="" />
+                  </InArgument>
+                </ui:ReadRange.Range>
+              </ui:ReadRange>
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDevice]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,340" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,216" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="338,94" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[CurrentRow.Item(0).ToString + &quot; &quot; + CurrentRow.Item(1).ToString + &quot; &quot;+ CurrentRow.Item(2).ToString + &quot; &quot;+ CurrentRow.Item(3).ToString + &quot; &quot;+ CurrentRow.Item(4).ToString + &quot; &quot; + CurrentRow.Item(5).ToString]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+      </ueab:ExcelProcessScopeX>
+    </Sequence>
+    <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="496,1392" sap2010:WorkflowViewState.IdRef="Sequence_26">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: New Tab" sap:VirtualizedContainerService.HintSize="434,1270" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="714924f6-20ef-43dd-a343-e55de8b8090f" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,1044" sap2010:WorkflowViewState.IdRef="Sequence_25">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="ui:PasswordCredentials" Name="credentials" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uas:GetUsernamePasswordX OrchestratorCredentialName="{x:Null}" TimeoutInSeconds="{x:Null}" AutosubmitTimeoutSeconds="10" Credential="[credentials]" CredentialName="UiPath: uiPathLogin" CredentialsSource="CredentialsManager" DisplayName="Get Username/Password" sap:VirtualizedContainerService.HintSize="338,180" sap2010:WorkflowViewState.IdRef="GetUsernamePasswordX_1" />
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="714924f6-20ef-43dd-a343-e55de8b8090f" Text="[credentials.Username]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Identity/Account/Login" DesignTimeRectangle="123, 467, 187, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT Input_Email'" FullSelectorArgument="&lt;webctrl id='Input_Email' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Input_Email' tag='INPUT' type='email' class='form-control' aaname='Email' /&gt;" Guid="0555ab44-ddcc-4e3e-9c68-2003efd94707" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAL8AAAAqCAYAAADiQYr2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQFSURBVHhe7Z2xbhsxDIb9fl4CP02Q1e+QKaMfIVvmrEURFBladCiKBtnapUUHo+qRFCVSpzv7aueSnn4BHxCdJN4v8pdiZIhXAQ2t0QbzozXbnPl//vodPn/5Ft4/fgrvPnwEYDGQp8nb5HFtyfz0kCZ8ff4enn/sO/4AsCD27G3yuB6AZH46FWL82kIAlgF5nLxOLZmfTgRufLB89ux1asn89LmoPhmAZUFepwbzg+aA+UGzwPygWWB+0CwwP2gWmB80C8wPmgXmB80C84NmgflBs8D8oFle3vyPu7BebcL1Y2Wsxt02rFbbcFsbWwqck1W3T8PFLjzU5s6ByfntVafl6r4+b2HA/DPD5qrkQ56vwuWdfz4LML+0Vzf/gmFjjd3wb+Dgw/yVicegtxejCVTz31Bhi7G4Zn21lY8BZAxngKdwfRHXuHX34VKfGeytOazFmkviyzr5eX2zy7FJj/2I4oxbaLNxaQ8X23DJ4/HgF5dA1tetS7pUw1N8R4yl7+jyRNpYbyWvtO7hZuP6Kc4hvbF/yPzVvDK+JrkWU/M6H2czPyc9bcIUUTfpDJiTI8msF4JjpgRLTGtwxb97REsZI5kuz8taYjE1TqG7pi2ZLRrWarXzncE0P/E9Pq5ocO/UfpnX+E7VIHNzXg/rlblj5ucYI3n18fSgT8vrnJzJ/MXmLby5fOOVBe0luzS/W1vBzJdnosUlk+ZUzDVqiF7f6/bImC/+gCbOhx2THOhaZ7BeHKOhzGvZ7621DOsdNv+UGtu5p+T1ZTmT+Uc2cIL5qS8HgG4OojgIvdiExM9rlBiT1+RCZ80Ti8Q6NfYmrO3cnvEkFq115i7GqN87nG6u0VDuveyXGo7UO2z+kRoP7FfiT8zrjLzpmz89i/DcZIahpHkz9dFxWj9UsFrfvu/A3AEz0Fprbsblh94xYmCrYZL5j9c7bP4yhqFXYzv3wLsH6/jynMn8/VsqJfEE85dj2TgjhdB5pRbT5/FOg79VpxRJxpI21mzm9kxrYrl8xDiso4jJ+Fyp7n81/zF6h80/UmO7PxrjeH6POY9lfwHmJzgZ3UacsU4wfyqaxtTnsXglOaGFFmfEDtbk508uktXQ6Xf7cHsQrHHS4aO83IkW6ns9EfMe/YvJdPNrX+KM6e09dxfEQI0ZyY+OZTM3Yv7/B0q4PZBzIEWuGtwgB6M4rInX0L1c2jR/5UabB70da+aOY1YX3+Z57vjBAFNpzvzya/t1b8/8scdT+9XvPmbg1j8rbd78AHTA/KBZYH7QLDA/aBaYHzRLz/z4F+WgDSr/ohxfTgFaoPrlFPhaIrBsRr6WiBo9pFNBE+hzEQBLgTxN3lbjU3PmR0NrqcH8aI22EP4Cn2asDHo7RuIAAAAASUVORK5CYII=" InformativeScreenshot="b63e74a38f30c71cde9c690a74a3e91f.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log in - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="123, 435, 38, 24" ElementType="Text" FriendlyName="'Email'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Email' check:innerText='Email' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAAcCAYAAAAX4C3rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADnSURBVFhH7ZVRDoMgDEB3lX34sWMZP3YSPvQmJh4F4zFM5iE6KGAKIdmGXYZZX8IHBdpng3qBkyCi3IgoNyLKjYh+hB7g2txhXOl8gNlPLbHoOkHb3MymeLTT5jd8iTJRcuBX/I9oWNf0iviEmDyJEeY+rLmhtF+wpGI8oqZQN8EDAxuMnS+exvoFZ4g5p+g9RxFSp0zUF94HSZh7kLSoJVMoZgFlcu9dLRN91dE3pHKxTBOqE3X3k56rsqOJFFKlqHu56E8jfAEOisb3CEd4o4tEDUlepY92tGJElBsR5UZEuTmJKMATLys139XdXAsAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="714924f6-20ef-43dd-a343-e55de8b8090f" Text="[credentials.Password]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Identity/Account/Login" DesignTimeRectangle="123, 553, 187, 38" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT Input_Password'" FullSelectorArgument="&lt;webctrl id='Input_Password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Input_Password' tag='INPUT' type='password' class='form-control' aaname='Password' /&gt;" Guid="d8d54954-bfa0-43e2-bf5a-2cc6057956b0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAL8AAAAqCAYAAADiQYr2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFnSURBVHhe7d2xSsNQGIbhc38uxavp3ntw6ugluHV2FSniUHGQYummi+IQ/D1fao6UhlLhLD3f+8MzJJwz5U3IlKRgGNMhfsZ29uL/+PyK55fXuH98iruHFdAMNa221fgwJX6d1IL19i227132DTSk69tW48MNUOLXXbELf2wj0AY1rtY1JX7dETzx0b6ub11T4td70fhioC1qXUP8sEP8sEX8sEX8sEX8sEX8sEX8sEX8sEX8sEX8sEX8sEX8sEX8sEX8sEX8sFUt/uX8MlJKkSbXsezPbeJqko/zuYv55nfdbUy1Jpsu2Pe/faitUvx/F69cwMWsHKc0i5u8rlxQ6S8q+07el9ehLp78Z7MPtVWLHzg3xA9bxA9bxA9bxA9bxA9bxA9bxA9bxA9bxA9bxA9bB/HziXJ4GPlEOT+ngIPRn1PwWyK07chviTQ6qbtCC/ReBLRCTavtIXzNXvwM4zTEz5hOxA+M233pLTzqswAAAABJRU5ErkJggg==" InformativeScreenshot="4f118eb5622ca2867a8a37f3f25d8f8c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log in - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="123, 521, 66, 24" ElementType="Text" FriendlyName="'Password'" FullSelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' type='' class='' check:innerText='Password' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEYAAAAcCAYAAADcO8kVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHgSURBVFhH7ZTLjQIxDIa3lT3sgbIQByrhMHSCNKUwogwkKMIb23nYic3zgpB/KRKT+PnF4QdCpgKMowDjKMA4CjCOAoyjAOMowDgKMKjzDOu/LRzO+TtJgyGDFfyqpR2+Uo+B0QaXefv9cF4BA3CFw2YF6/mav79Qr4EBWKb0pKYTf5CNeGqbGS58wrp1fty3fVwY08pJdnqPJrfUgOpjmXWkGMdSzx6WfMSvoPgWG53v6YlZppagnLWCT7BLyXbH/InnUy54iJ1syW+cSLqIFKftaRvrebOPqK1cUAeMfWUPXHMf7y6YIWEnSlSSm2Cz6IbtOHoasNBtgjbucdweflG3n8FoO8fXqNsAw7dVVz+iSeVGLZt6JseelKcrnQ3/VxIa1oDxqJa8h+cKvg0Yc9fYRrOur2H70H9MFZ3rptXEVDUIIyC+NQ2o3STG432OgXtjwx8GxoJgg8m693yEHzd1SjBafoak9557ShYYw5fqfAPM0GhOJMd8V6cgSdqn37KgASjZiliostfBJd+uTnrC0tfphexUvDLB74BJ4sB5pUIW2WABVZcooDaZl2yCxAW254XKRQ/PscAR8XqbG72oHrBGw1aDCVUFGEcBxlGAcRRgHAUYRwHGUYAxBfAPOTC2JY43EvQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Log in'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="714924f6-20ef-43dd-a343-e55de8b8090f" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Identity/Account/Login" DesignTimeRectangle="123, 655, 70, 38" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl id='login-submit' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='login-submit' tag='BUTTON' type='submit' class='btn btn-primary' aaname='Log in' check:innerText='Log in' /&gt;" Guid="00528921-fae2-4cb1-9048-c17ce9e09328" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAqCAYAAAAUJM0rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHQSURBVGhD7ZoxbsIwFIZ7jKr0VL1BpS4dyiHYehGmKnvHIoasXTOgbmEqYoCF4eHfsVM7ccojStI0fr/0CYht4vcRm8U3JGFFRDHjifr8+qaH1xXdPyV0+/gWJagdDuDCTSkKDeh09/xOs5cPms1XcaJqhwO4cGWVomBRSwoNjhC4gBObUhQMRv0kVVEu4MSmFIX1GRwQMXBiI6J+QUQxEVFMRBQTEcVERDERUUxEFJPJiFpu1cSPO1oE2rqgW1HJjvZ0onUSaOsZETUSRBSTwUUtspO5i8k2r/fT3/OTfZbT+ojXTb2vQS8957vsZ/9+B1o6Y65hUFF68t5kN1qAt7cYSVlq+9hxLUR5Y8y9Qj8Mg+FENbVVrlcLLiiKvFpUdXNPD+piu6dqOFGYZPBfqZBQPEHu+3qfNkvP7SOiFNMRxVp6hZBagfOcMnU5DlEKPfnQZu4WpIvpaDMft6hAqgU4CRZvZNlk6dSWXm9cFtU3/0PUhSU9BOMTpZaH/+QUG3ltGQ3M+ESF9rk/lgTGJ2qkiCgmIoqJiGIiopgERcmxnwpNx37kIJlP40EyOZpoULXDAVwEjyYiaIBFdML6jBHUDgeuJMQTJWmOiGKF6AxrbLGSnz0iIQAAAABJRU5ErkJggg==" InformativeScreenshot="36765c0bb79b5b26b5750da3ee2ab963.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log in - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="14dbe7506f418d193adc64e62f17c49d.png" Selector="&lt;html app='chrome.exe' url='https://connectedoffice-devicemanagement.azurewebsites.net/Identity/Account/Login' /&gt;" Url="https://connectedoffice-devicemanagement.azurewebsites.net/Identity/Account/Login" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
   </Sequence>
 </Activity>
