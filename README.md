@@ -9,13 +9,16 @@ The following code represent a RPA system created.
 
 
 In this case, the desired output would be a new record being displayed on the web
-application once the item has been added. This would resort in a highly repetitive process which
-can and should (in this case) be automated using RPA.
+application once the item has been added. This would resort in a highly repetitive process which is automated using RPA.
+
+To test the solution:
+The webApp at: https://connectedoffice-devicemanagement.azurewebsites.net/ is used to run solution.
+
+
 |Branching     |
 |------------------|
 Default: Main|
-devOps|
-hotfix|  
+devOps| 
 
  #**Authentication:**
  Server:
@@ -24,22 +27,24 @@ hotfix|
  provided through submission.
  
   #**Use:**
- The RPA can be accessed at link : https://projectnwuapi.azurewebsites.net/
+ The RPA can be accessed at link: https://github.com/chriszeymar/CMPG-323-Project-4---34946039 by allowed users.
  
  The UIpath support is embedded in code so the link automatically.
  UIpath provides a structured look for testing purposes. 
  
- #**RPA platform:** https://github.com/chriszeymar/CMPG-323-Project-2--34946039/blob/master/Screenshot%20API%20Manager.jpg
+  #**Steps to test solution:**
+  
+  1. Run Login activity to get access into domain.
+  
+  2. Run Read/Write activity which confirms read by message box then populates the webApp
+  
+  3. Run Delete Activity reboot or format all 3 domains
+  
+  4. Run Last sequence to update test result.
+  
+  **N.B** All sequences can run consequently.
  
- Each controller contains at core:
- 
- Get method
- 
- Put method
- 
- Delete method 
- 
- Post method
+ #**RPA orchestrator proof publish:** https://github.com/chriszeymar/CMPG-323-Project-4---34946039/blob/devOps/ConnectedOfficeWebApplication/cmpg321ProofPublish.jpg
  
 **Endpoints:**
 
@@ -53,4 +58,4 @@ Categories
  
 Additional method are provided as per the rubric. 
  
- **click on try it out to get description of how the method works**
+ **Open solution in UI studio then right click each activity then click on test this activity to test all automation proccesses**
