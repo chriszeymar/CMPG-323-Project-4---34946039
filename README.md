@@ -50,7 +50,7 @@ devOps|
 
 Login
 
-Read/Create 
+Read/Write 
 
 Delete 
 
