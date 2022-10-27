@@ -38,7 +38,7 @@ devOps|
   
   2. Run Read/Write activity which confirms read by message box then populates the webApp
   
-  3. Run Delete Activity reboot or format all 3 domains
+  3. Run Delete Activity reboot or format all 3 domains. Delete sequence works on as stack, with FIFO principple.
   
   4. Run Last sequence to update test result.
   
@@ -46,15 +46,15 @@ devOps|
  
  #**RPA orchestrator proof publish:** https://github.com/chriszeymar/CMPG-323-Project-4---34946039/blob/devOps/ConnectedOfficeWebApplication/cmpg321ProofPublish.jpg
  
-**Endpoints:**
+**Sequences:**
 
-Authentication 
+Login
 
-Devices 
+Read/Create 
 
-Zones 
+Delete 
 
-Categories
+Update test results
  
 Additional method are provided as per the rubric. 
  
